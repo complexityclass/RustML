@@ -2,7 +2,7 @@ use csv::ReaderBuilder;
 use std::error::Error;
 use std::fs::File;
 use std::path::Path;
-use shallow::gradient_descent;
+use shallow::gradient_descent_single_param::gradient_descent;
 use crate::shallow;
 
 pub fn predict_price() -> Result<(), Box<dyn Error>> {
@@ -42,7 +42,7 @@ fn train() -> Result<(f64, f64), Box<dyn Error>> {
         y_train.push(price);
     }
 
-    let (w, b) = shallow::gradient_descent(&x_train, &y_train, 0.0, 0.0, 0.0001, 10000);
+    let (w, b) = gradient_descent(&x_train, &y_train, 0.0, 0.0, 0.0001, 10000);
     Ok((w, b))
 }
 

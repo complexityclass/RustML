@@ -7,3 +7,5 @@ edition = "2021"
 
 [dependencies]
 csv = "1.2.1"
+#tensorflow = "0.20.0"
+ndarray = "0.15.6"

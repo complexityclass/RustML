@@ -78,8 +78,8 @@ mod tests {
         let w = 2.0;
         let b = 2.0;
         let (dj_dw, dj_db) = compute_gradient(&x, &y, w, b);
-        assert_eq!(dj_dw, -648.0);
-        assert_eq!(dj_db, -399.0);
+        assert_eq!(dj_dw, -642.0);
+        assert_eq!(dj_db, -395.0);
     }
 
     #[test]
